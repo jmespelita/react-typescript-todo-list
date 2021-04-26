@@ -1,0 +1,12 @@
+@mixin setFont($weight, $size, $color){
+    font-family: $primaryFont;
+    font-weight: $weight;
+    color: $color;
+    font-size: $size;
+}
+
+@mixin setSize($width, $height, $padding) {
+    width: $width;
+    max-height: $height;
+    padding: $padding;
+}

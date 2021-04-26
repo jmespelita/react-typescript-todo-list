@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&display=swap");
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  border-radius: 0;
+}
+
+input,
+label,
+select,
+button,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  /* Browsers have different default form fonts */
+  font-size: 13px;
+  font-family: Arial;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.add-todo-input {
+  display: inline-block;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  color: #88ffd6;
+  font-size: 13px;
+  width: 100%;
+  max-height: 46px;
+  padding: 18px;
+  background-color: #2c2c2c;
+  margin-bottom: 10px;
+}
+
+.btn {
+  width: 100%;
+  max-height: 46px;
+  padding: 18px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  color: black;
+  font-size: 13px;
+  background-color: #88ffd6;
+  display: inline-block;
+  margin-bottom: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.todo-check {
+  position: relative;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 20px;
+  width: 20px;
+  -webkit-appearance: none;
+}
+
+.todo-check label {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  color: #88ffd6;
+  font-size: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.todo-check label:before,
+.todo-check label:after {
+  pointer-events: none;
+}
+
+.todo-check label:before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  content: ' ';
+  height: 20px;
+  width: 20px;
+  border: solid 3px #88ffd6;
+  background: rgba(27, 27, 27, 0.7);
+  margin-right: 10px;
+}
+
+.todo-check label:after {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  content: ' ';
+  height: 8px;
+  width: 8px;
+  background-color: #88ffd6;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.todo-check input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+body {
+  background: #2e2e2e;
+  background: radial-gradient(farthest-corner, #2e2e2e 0%, #050505 100%);
+}
+
+.container {
+  background-color: rgba(27, 27, 27, 0.7);
+  margin: 30px auto;
+  overflow: auto;
+  max-width: 400px;
+  min-height: 540px;
+  border: 1px solid rgba(97, 97, 97, 0.4);
+  padding: 35px;
+  border-radius: 5px;
+  font-size: 13.5pt;
+  font-family: inherit;
+}
+
+.container h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  color: #88ffd6;
+  font-size: 32px;
+  padding-bottom: 40px;
+}
+
+.todo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.todo-btn {
+  font-family: "Raleway", sans-serif;
+  font-weight: 0;
+  color: #88ffd6;
+  font-size: 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  cursor: pointer;
+}
+
+.todo-btn .todo-container h3 {
+  line-height: 1;
+}
+/*# sourceMappingURL=App.css.map */

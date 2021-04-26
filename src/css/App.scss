@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&display=swap');
+@import './variables';
+@import './mixins';
+@import './reset';
+@import './header';
+@import './todo-check';
+
+
+body{
+    background: rgb(46,46,46);
+    background: radial-gradient(farthest-corner, rgba(46,46,46,1) 0%, rgba(5,5,5,1) 100%);
+}
+
+.container{
+    background-color: rgba(27,27,27, 0.7);
+    margin: 30px auto;
+    overflow: auto;
+    max-width: 400px;
+    min-height: 540px;
+    border: 1px solid rgba(97,97,97, 0.4);
+    padding: 35px;
+    border-radius: 5px;
+    font-size: 13.5pt;
+    font-family: inherit;
+    h1{
+        @include setFont(900, 32px, $primaryColor);
+        padding-bottom: 40px;
+    }
+}
+
+.todo-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-btn{
+    @include setFont(00, 25px, $primaryColor);
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    .todo-container h3{
+        line-height: 1;
+    }
+}
+
+
+

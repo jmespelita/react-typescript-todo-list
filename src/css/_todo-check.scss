@@ -1,0 +1,57 @@
+
+.todo-check{
+    position: relative;
+    flex: 5;
+}
+
+input[type="checkbox"]{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 20px;
+    width: 20px;
+    -webkit-appearance: none;
+}
+
+.todo-check label{
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    @include setFont(500, 15px, $primaryColor);
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.todo-check label:before,
+.todo-check label:after{
+    pointer-events: none;
+} 
+
+.todo-check label:before{
+    display: flex;
+    content: ' ';
+    height: 20px;
+    width: 20px;
+    border: solid 3px $primaryColor;
+    background: rgba(27, 27, 27, 0.7);
+    margin-right: 10px;
+}
+
+.todo-check label:after{
+    position: absolute;
+    top:6px;
+    left:6px;
+    display: flex;
+    content: ' ';
+    height: 8px;
+    width: 8px;
+    background-color: $primaryColor;
+    transform: scale(0);
+    transition: transform .3s ease;
+}
+
+.todo-check input[type="checkbox"]:checked + label:after{
+    opacity: 1;
+    transform: scale(1);
+}

@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import './css/App.css'
 
 type FormElement = React.FormEvent<HTMLFormElement>;
 
@@ -41,35 +42,45 @@ function App(): JSX.Element {
 
   return (
     <Fragment>
-      <h1>Todo List</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          value={value}
-          onChange={e => setValue(e.target.value)}
-          required
-        />
-        <button type='submit'>Add Todo</button>
-      </form>
-      <section>
-        {todos.map((todo: ITodo, index: number) => {
-          return (
-            <Fragment key={index}>
-              <div
-                style={{ textDecoration: todo.complete ? 'line-through' : '' }}
-              >
-                {todo.text}
-              </div>
-              <button type='button' onClick={(): void => completeTodo(index)}>
-                {todo.complete ? 'Incomplete' : 'Complete'}
-              </button>
-              <button type='button' onClick={(): void => deleteTodo(index)}>
-                &times;
-              </button>
-            </Fragment>
-          );
-        })}
-      </section>
+      <div className='container'>
+        <h1>To-do List</h1>
+        <form className='form' onSubmit={handleSubmit}>
+          <input
+            className='add-todo-input'
+            type='text'
+            value={value}
+            placeholder='Add a task...'
+            onChange={e => setValue(e.target.value)}
+            required
+          />
+          <button className='btn' type='submit'>Add to-do</button>
+        </form>
+        <section>
+          {todos.map((todo: ITodo, index: number) => {
+            return (
+              <Fragment key={index}>
+                <div className='todo-container'>
+                  <div className='todo-check'>
+                    <input type='checkbox'
+                        value=''
+                        checked={todo.complete} 
+                        onClick={(): void => completeTodo(index)
+                        }
+                        id={'todo'+index} 
+                    />
+                    <label htmlFor={'todo'+index} style={{ textDecoration: todo.complete ? 'line-through' : '' }}>
+                      {todo.text}
+                    </label>
+                  </div>
+                  <div className='todo-btn'>
+                    <h3 onClick={(): void => deleteTodo(index)}>&times;</h3>
+                  </div>
+                </div>
+              </Fragment>
+            );
+          })}
+        </section>
+      </div>
     </Fragment>
   );
 }
